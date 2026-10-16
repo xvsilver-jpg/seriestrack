@@ -7,6 +7,14 @@
   "author": "SeriesTrack",
   "license": "MIT",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xvsilver-jpg/seriestrack.git"
+  },
+  "homepage": "https://github.com/xvsilver-jpg/seriestrack#readme",
+  "bugs": {
+    "url": "https://github.com/xvsilver-jpg/seriestrack/issues"
+  },
   "scripts": {
     "start": "electron .",
     "smoke": "electron . --smoke",

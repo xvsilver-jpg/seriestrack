@@ -1,5 +1,10 @@
 # SeriesTrack
 
+[![Release](https://img.shields.io/github/v/release/xvsilver-jpg/seriestrack?label=descarga&color=e5a00d)](../../releases/latest)
+[![License](https://img.shields.io/github/license/xvsilver-jpg/seriestrack)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6)](#instalación)
+[![Electron](https://img.shields.io/badge/Electron-41-47848F)](https://www.electronjs.org/)
+
 Aplicación de escritorio para Windows para **seguir series y episodios** de las principales
 plataformas de streaming, con una interfaz limpia y visual inspirada en Plex.
 
