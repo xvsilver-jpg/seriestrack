@@ -1,0 +1,11 @@
+# Normalizar finales de línea (el proyecto se desarrolla en Windows)
+* text=auto eol=lf
+
+# Binarios
+*.ico binary
+*.png binary
+*.exe binary
+
+# Scripts de Windows en CRLF
+*.ps1 text eol=crlf
+*.bat text eol=crlf

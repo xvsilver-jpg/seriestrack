@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data: https: stimg:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+  />
+  <title>SeriesTrack</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Barra de arrastre de la ventana (los controles nativos los dibuja Windows) -->
+  <div class="titlebar">
+    <div class="titlebar__brand">
+      <span class="titlebar__dot"></span>
+      <span class="titlebar__text">SeriesTrack</span>
+    </div>
+  </div>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar__head">
+        <div class="logo">
+          <div class="logo__mark">ST</div>
+          <div class="logo__name">Series<strong>Track</strong></div>
+        </div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+      <div class="sidebar__foot">
+        <button class="icon-btn" id="collapseBtn" title="Colapsar menú">«</button>
+        <div class="sync-mini" id="syncMini">—</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="search">
+          <span class="search__icon">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7.2"/><path d="m20.4 20.4-3.9-3.9"/></svg>
+          </span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Buscar series, actores o géneros…  (Ctrl+K)"
+            autocomplete="off"
+          />
+          <button class="search__clear" id="searchClear" hidden>✕</button>
+        </div>
+        <div class="topbar__actions">
+          <button class="btn btn--ghost" id="syncBtn" title="Buscar nuevos episodios ahora">
+            <span class="spin-target">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                   stroke-width="1.7" stroke-linecap="round"><path d="M20 12a8 8 0 1 1-2.6-5.9"/><path d="M20 4.2V10h-5.6"/></svg>
+            </span>
+            Sincronizar
+          </button>
+          <button class="icon-btn badge-host" id="bellBtn" title="Notificaciones">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+                 stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M18.2 16.4v-5.2a6.2 6.2 0 1 0-12.4 0v5.2l-1.9 2.9h16.2z"/><path d="M10 21.6h4"/></svg>
+            <span class="badge" id="bellBadge" hidden>0</span>
+          </button>
+          <div class="avatar" id="avatar" title="Tu perfil">ST</div>
+        </div>
+      </header>
+      <div class="view" id="view"></div>
+    </main>
+  </div>
+
+  <!-- Panel de notificaciones -->
+  <div class="drawer-scrim" id="drawerScrim" hidden></div>
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__head">
+      <h2>Notificaciones</h2>
+      <div class="drawer__head-actions">
+        <button class="btn btn--ghost btn--sm" id="readAllBtn">Marcar leídas</button>
+        <button class="btn btn--ghost btn--sm" id="clearAllBtn">Vaciar</button>
+        <button class="icon-btn" id="drawerClose">✕</button>
+      </div>
+    </div>
+    <div class="drawer__body" id="drawerBody"></div>
+  </aside>
+
+  <div class="modal-root" id="modalRoot"></div>
+  <div class="toasts" id="toasts"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

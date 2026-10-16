@@ -1,0 +1,68 @@
+{
+  "name": "seriestrack",
+  "productName": "SeriesTrack",
+  "version": "1.0.0",
+  "description": "Seguimiento de series y episodios de las principales plataformas de streaming. Interfaz tipo Plex.",
+  "main": "main.js",
+  "author": "SeriesTrack",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "smoke": "electron . --smoke",
+    "test": "node scripts/selftest.js",
+    "icon": "python scripts/make-icon.py",
+    "dist": "electron-builder --win nsis portable"
+  },
+  "build": {
+    "appId": "com.seriestrack.desktop",
+    "productName": "SeriesTrack",
+    "copyright": "Copyright © 2026 SeriesTrack",
+    "files": [
+      "main.js",
+      "preload.js",
+      "src/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "SeriesTrack",
+      "artifactName": "SeriesTrack-Setup-${version}.${ext}",
+      "uninstallDisplayName": "SeriesTrack"
+    },
+    "portable": {
+      "artifactName": "SeriesTrack-Portable-${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "electron": "^41.7.1",
+    "electron-builder": "^25.1.8"
+  }
+}
